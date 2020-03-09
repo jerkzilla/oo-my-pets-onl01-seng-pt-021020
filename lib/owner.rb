@@ -68,13 +68,13 @@ class Owner
     "I have #{dogs.length} dog(s), and #{cats.length} cat(s)."
   end
 
-    def sell_pets
-        @pets.collect do |species|
-             species.each do |pet|
-               pets.mood = "nervous"
-             end
-             instances.clear
-           end
-         end
+  def sell_pets
+  @pets.each do |type, name_array|
+    name_array.each do |pet|
+      pet.mood = "nervous"
+      #name_array.delete(pet)
+    end
+  end
+  @pets = {}
 
 end
