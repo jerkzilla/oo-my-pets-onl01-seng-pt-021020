@@ -74,6 +74,7 @@ class Owner
       #binding.pry
         @@pets.collect do |species, instances|
              instances.each do |pet|
+               pet.owner = nil
                pet.mood = "nervous"
              end
              instances.clear
