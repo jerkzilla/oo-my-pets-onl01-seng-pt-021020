@@ -68,8 +68,13 @@ class Owner
     "I have #{dogs.length} dog(s), and #{cats.length} cat(s)."
   end
 
-  def sell_pets
-       pets.mood = "nervous"
-     end
+    def sell_pets
+        @pets.collect do |species|
+             instances.each do |pet|
+               pet.mood = "nervous"
+             end
+             instances.clear
+           end     
+         end     end
 
 end
