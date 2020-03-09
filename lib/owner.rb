@@ -1,3 +1,4 @@
+require 'pry'
 class Owner
 
   attr_reader :name, :species, :dogs, :cats
@@ -68,13 +69,14 @@ class Owner
     "I have #{dogs.length} dog(s), and #{cats.length} cat(s)."
   end
 
-  def sell_pets
-  @pets.each do |type, name_array|
-    name_array.each do |pet|
-      pet.mood = "nervous"
-      #name_array.delete(pet)
-    end
-  end
-  @pets = {}
-end
+    def sell_pets
+      binding.pry
+        @pets.collect do |species, instances|
+             instances.each do |pet|
+               pet.mood = "nervous"
+             end
+             instances.clear
+           end
+         end
+
 end
